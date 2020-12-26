@@ -52,7 +52,7 @@ export class AppHome {
       });
   }
 
-  handleCLick(event: Event)
+  handleCLick()
   {
     console.log(this.products) 
   }
@@ -71,6 +71,10 @@ export class AppHome {
 
         <stencil-route-link url="/profile/stencil">
           <button>Profile page</button>
+        </stencil-route-link>
+
+        <stencil-route-link url="/websocket">
+          <button>Test websocket</button>
         </stencil-route-link>
       </div>
     );

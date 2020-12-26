@@ -6,6 +6,8 @@ from flask_swagger_ui import get_swaggerui_blueprint
 
 from flask_cors import CORS
 
+from flask_socketio import SocketIO, send, emit
+
 from ma import ma
 from db import db
 
@@ -18,7 +20,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:toor@db/api'
 
 db.init_app(app)
 ma.init_app(app)
+
+
+app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app, cors_allowed_origins="*")
 CORS(app)
+
 
 SWAGGER_URL = '/api/docs'  # URL for exposing Swagger UI (without trailing '/')
 # Our API url (can of course be a local resource)
@@ -102,6 +109,31 @@ def spec():
     return jsonify(swag)
 
 
+@socketio.on('message')
+def handle_message(data):
+    app.logger.info('received message: %s', data)
+    emit('message', 'message recu')
+
+
+@socketio.on('init')
+def init(data):
+    app.logger.info('init message: %s', data)
+    emit('init', 'initilaisation ok')
+
+
+@socketio.on('ping')
+def receive_ping(data):
+    app.logger.info('ping')
+    emit('ping', 'pong')
+
+
+@socketio.on('pong')
+def receive_pong(data):
+    app.logger.info('pong')
+    emit('pong', 'ping')
+
+
 if __name__ == '__main__':
     print(db)
+    socketio.run(app, host="localhost")
     app.run(port=5000, debug=True)
