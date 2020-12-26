@@ -1,0 +1,16 @@
+Flask
+redis
+mysql-connector
+flask-socketio
+Flask-Migrate
+pymysql
+marshmallow-sqlalchemy
+SQLAlchemy
+marshmallow
+flask-marshmallow
+Flask-SQLAlchemy
+Flask-RESTful
+werkzeug 
+flask-swagger
+flask-cors
+flask-swagger-ui
