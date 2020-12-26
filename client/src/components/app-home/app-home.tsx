@@ -76,6 +76,14 @@ export class AppHome {
         <stencil-route-link url="/websocket">
           <button>Test websocket</button>
         </stencil-route-link>
+
+                <div class="jumbotron">
+                    <center>
+                        <h1 class="display-3">Welcome!</h1>
+                        <p class="lead">This is a Stencil sample application - Demonstrating the power of pure web components!</p>
+                        <button class="btn btn-primary" >Learning Resources for Web Developers</button>
+                    </center>
+                </div>
       </div>
     );
   }

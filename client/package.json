@@ -21,7 +21,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "socket.io": "^3.0.4",
-    "socket.io-client": "^3.0.4"
+    "socket.io-client": "^3.0.4",
+    "stenciljs-bootstrap": "0.0.14"
   }
 }

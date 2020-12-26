@@ -1,8 +1,5 @@
 import { Component, h, State } from '@stencil/core';
-//import { submitMessage } from '../../api/function';
 import { initiateSocket, sendMessage, sendPing, sendPong, disconnectSocket } from "../Socket"
-
-
 
 
 @Component({
@@ -55,21 +52,38 @@ export class WebSocket {
     return (
       <div class="container">
         <div class="row">
-          <h1>
-            Bienvenue sur la page web socket
-          </h1>
+          <h1 class="display-1"> Bienvenue sur la page web socket</h1>
+        </div>
+        <div class="row">
+          
+           
+      
 
-          <button class="btn btn-primary" onClick={this.envoyer}>
+          <div class="row">
+            <div class="col-md-4">
+<button class="btn btn-primary" onClick={this.envoyer}>
             Envoyer
           </button>
+          </div>
 
-          <button class="btn btn-primary" onClick={this.ping}>
+          <div class="col-md-4">
+<button class="btn btn-primary" onClick={this.ping}>
             ping
           </button>
+          </div>
 
-          <button class="btn btn-primary" onClick={this.pong}>
+          <div class="col-md-4">
+<button class="btn btn-primary" onClick={this.pong}>
             pong
           </button>
+          </div>
+          </div>
+
+          
+
+          
+
+          
         </div>
       </div>
     );
