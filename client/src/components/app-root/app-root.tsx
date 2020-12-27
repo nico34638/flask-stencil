@@ -31,7 +31,8 @@ export class AppRoot {
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true}/>
-              <stencil-route url="/websocket" component="web-socket"/>
+              <stencil-route url="/websocket" component="web-socket" />
+              <stencil-route url="/product/add" component="app-product-add"/>
             </stencil-route-switch>
           </stencil-router>
         </main>

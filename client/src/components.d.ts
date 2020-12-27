@@ -16,6 +16,8 @@ export namespace Components {
         "price": number;
         "tiles": string;
     }
+    interface AppProductAdd {
+    }
     interface AppRoot {
     }
     interface WebSocket {
@@ -40,6 +42,12 @@ declare global {
         prototype: HTMLAppProductElement;
         new (): HTMLAppProductElement;
     };
+    interface HTMLAppProductAddElement extends Components.AppProductAdd, HTMLStencilElement {
+    }
+    var HTMLAppProductAddElement: {
+        prototype: HTMLAppProductAddElement;
+        new (): HTMLAppProductAddElement;
+    };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
     var HTMLAppRootElement: {
@@ -56,6 +64,7 @@ declare global {
         "app-home": HTMLAppHomeElement;
         "app-list-product": HTMLAppListProductElement;
         "app-product": HTMLAppProductElement;
+        "app-product-add": HTMLAppProductAddElement;
         "app-root": HTMLAppRootElement;
         "web-socket": HTMLWebSocketElement;
     }
@@ -69,6 +78,8 @@ declare namespace LocalJSX {
         "price"?: number;
         "tiles"?: string;
     }
+    interface AppProductAdd {
+    }
     interface AppRoot {
     }
     interface WebSocket {
@@ -77,6 +88,7 @@ declare namespace LocalJSX {
         "app-home": AppHome;
         "app-list-product": AppListProduct;
         "app-product": AppProduct;
+        "app-product-add": AppProductAdd;
         "app-root": AppRoot;
         "web-socket": WebSocket;
     }
@@ -88,6 +100,7 @@ declare module "@stencil/core" {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-list-product": LocalJSX.AppListProduct & JSXBase.HTMLAttributes<HTMLAppListProductElement>;
             "app-product": LocalJSX.AppProduct & JSXBase.HTMLAttributes<HTMLAppProductElement>;
+            "app-product-add": LocalJSX.AppProductAdd & JSXBase.HTMLAttributes<HTMLAppProductAddElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "web-socket": LocalJSX.WebSocket & JSXBase.HTMLAttributes<HTMLWebSocketElement>;
         }
