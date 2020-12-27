@@ -1,4 +1,4 @@
-import { Component, h, Method, State  } from '@stencil/core';
+import {Component, h, Method, State} from '@stencil/core';
 
 @Component({
   tag: 'app-home',
@@ -11,8 +11,7 @@ export class AppHome {
   @State() counter: number;
 
 
-  constructor()
-  {
+  constructor() {
     this.counter = 0;
     this.handleCLick = this.handleCLick.bind(this)
 
@@ -28,13 +27,12 @@ export class AppHome {
     }
     console.log(this.products)
     this.fetchProducts()
-    
+
   }
 
 
   @Method()
-  async fetchProducts()
-  {
+  async fetchProducts() {
     var myHeaders = new Headers();
 
     var myInit = {
@@ -45,16 +43,15 @@ export class AppHome {
     return await fetch('http://localhost:5000/products', myInit)
       .then(response => response.json())
       .then((result) => {
-          console.log(this.products)
-          console.log(result)
+        console.log(this.products)
+        console.log(result)
         this.products = result
         console.log(this.products)
       });
   }
 
-  handleCLick()
-  {
-    console.log(this.products) 
+  handleCLick() {
+    console.log(this.products)
   }
 
   render() {
@@ -63,11 +60,12 @@ export class AppHome {
     return (
       <div class="app-home">
         <p>
-          Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components using Stencil! Check out our docs on{' '}
+          Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components
+          using Stencil! Check out our docs on{' '}
           <a href="https://stenciljs.com">stenciljs.com</a> to get started.
         </p>
 
-        <button onClick={ this.handleCLick }>Mon gros ziziz</button>
+        <button onClick={this.handleCLick}>Mon gros ziziz</button>
 
         <stencil-route-link url="/profile/stencil">
           <button>Profile page</button>
@@ -77,13 +75,13 @@ export class AppHome {
           <button>Test websocket</button>
         </stencil-route-link>
 
-                <div class="jumbotron">
-                    <center>
-                        <h1 class="display-3">Welcome!</h1>
-                        <p class="lead">This is a Stencil sample application - Demonstrating the power of pure web components!</p>
-                        <button class="btn btn-primary" >Learning Resources for Web Developers</button>
-                    </center>
-                </div>
+        <div class="jumbotron">
+          <center>
+            <h1 class="display-3">Welcome!</h1>
+            <p class="lead">This is a Stencil sample application - Demonstrating the power of pure web components!</p>
+            <button class="btn btn-primary">Learning Resources for Web Developers</button>
+          </center>
+        </div>
       </div>
     );
   }

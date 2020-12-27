@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="030a8a41-660f-4b7a-850d-baaafe591651" name="Default Changelist" comment="" />
+    <list default="true" id="030a8a41-660f-4b7a-850d-baaafe591651" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Socket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/app-home/app-home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-home/app-home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/app-root/app-root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-root/app-root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/web-socket/web-socket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/web-socket/web-socket.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +16,11 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1m9ykstrZfgelOVwEwwiyKn3dlZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,7 +32,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Users\Nicolas Fidel\AppData\Local\JetBrains\Toolbox\apps\PhpStorm\ch-0\203.5981.175\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -34,6 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608920247909</updated>
       <workItem from="1608920249102" duration="89000" />
+      <workItem from="1609018457711" duration="148000" />
     </task>
     <servers />
   </component>

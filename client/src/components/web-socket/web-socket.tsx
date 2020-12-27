@@ -1,5 +1,5 @@
-import { Component, h, State } from '@stencil/core';
-import { initiateSocket, sendMessage, sendPing, sendPong, disconnectSocket } from "../Socket"
+import {Component, h, State} from '@stencil/core';
+import {initiateSocket, sendMessage, sendPing, sendPong, disconnectSocket} from "../Socket"
 
 
 @Component({
@@ -12,12 +12,10 @@ export class WebSocket {
 
   @State() socket: {};
 
-  constructor()
-  {
+  constructor() {
     this.envoyer = this.envoyer.bind(this)
     this.ping = this.ping.bind(this)
-        this.pong = this.pong.bind(this)
-
+    this.pong = this.pong.bind(this)
   }
 
   componentWillLoad() {
@@ -25,26 +23,21 @@ export class WebSocket {
     console.log(this.socket)
   }
 
-  disconnectedCallback()
-  {
+  disconnectedCallback() {
     disconnectSocket();
   }
 
-  ping()
-  {
+  ping() {
     sendPing()
   }
 
-  pong()
-  {
+  pong() {
     sendPong()
   }
 
 
-
-  envoyer()
-  {
-    console.log("envoyer") 
+  envoyer() {
+    console.log("envoyer")
     sendMessage("bite")
   }
 
@@ -55,35 +48,27 @@ export class WebSocket {
           <h1 class="display-1"> Bienvenue sur la page web socket</h1>
         </div>
         <div class="row">
-          
-           
-      
+
 
           <div class="row">
             <div class="col-md-4">
-<button class="btn btn-primary" onClick={this.envoyer}>
-            Envoyer
-          </button>
+              <button class="btn btn-primary" onClick={this.envoyer}>
+                Envoyer
+              </button>
+            </div>
+
+            <div class="col-md-4">
+              <button class="btn btn-primary" onClick={this.ping}>
+                ping
+              </button>
+            </div>
+
+            <div class="col-md-4">
+              <button class="btn btn-primary" onClick={this.pong}>
+                pong
+              </button>
+            </div>
           </div>
-
-          <div class="col-md-4">
-<button class="btn btn-primary" onClick={this.ping}>
-            ping
-          </button>
-          </div>
-
-          <div class="col-md-4">
-<button class="btn btn-primary" onClick={this.pong}>
-            pong
-          </button>
-          </div>
-          </div>
-
-          
-
-          
-
-          
         </div>
       </div>
     );

@@ -1,13 +1,12 @@
 version: "3"
 services:
-  
   client:
     build: ./client/
-    ports: 
+    ports:
       - "3333:3333"
     volumes:
-      - './client:/app'
-    networks: 
+      - "./client:/app"
+    networks:
       - net
 
   server:
@@ -26,7 +25,7 @@ services:
     #command: --default-authentication-plugin=mysql_native_password
     #restart: always
     volumes:
-        - ./mysql:/var/lib/mysql:delegated
+      - ./mysql:/var/lib/mysql:delegated
     environment:
       MYSQL_ROOT_PASSWORD: toor
       MYSQL_DATABASE: api
@@ -37,7 +36,7 @@ services:
 
   phpmyadmin:
     depends_on:
-        - db
+      - db
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadminprojet
     environment:
@@ -51,7 +50,17 @@ services:
     networks:
       - net
 
+  #ia:
+  #  build: ./ia/
+  #  ports:
+  #    - "6000:6000"
+  #  volumes:
+  #    - ./ia:/code
+  #  environment:
+  #    FLASK_ENV: development
+  #  networks:
+  #    - net
+
 networks:
   net:
     driver: bridge
-
