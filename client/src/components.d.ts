@@ -5,13 +5,16 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MatchResults } from "@stencil/router";
 export namespace Components {
     interface AppHome {
         "fetchProducts": () => Promise<void>;
     }
-    interface AppProfile {
-        "match": MatchResults;
+    interface AppListProduct {
+        "fetchProducts": () => Promise<void>;
+    }
+    interface AppProduct {
+        "price": number;
+        "tiles": string;
     }
     interface AppRoot {
     }
@@ -25,11 +28,17 @@ declare global {
         prototype: HTMLAppHomeElement;
         new (): HTMLAppHomeElement;
     };
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
+    interface HTMLAppListProductElement extends Components.AppListProduct, HTMLStencilElement {
     }
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
+    var HTMLAppListProductElement: {
+        prototype: HTMLAppListProductElement;
+        new (): HTMLAppListProductElement;
+    };
+    interface HTMLAppProductElement extends Components.AppProduct, HTMLStencilElement {
+    }
+    var HTMLAppProductElement: {
+        prototype: HTMLAppProductElement;
+        new (): HTMLAppProductElement;
     };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
@@ -45,7 +54,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
-        "app-profile": HTMLAppProfileElement;
+        "app-list-product": HTMLAppListProductElement;
+        "app-product": HTMLAppProductElement;
         "app-root": HTMLAppRootElement;
         "web-socket": HTMLWebSocketElement;
     }
@@ -53,8 +63,11 @@ declare global {
 declare namespace LocalJSX {
     interface AppHome {
     }
-    interface AppProfile {
-        "match"?: MatchResults;
+    interface AppListProduct {
+    }
+    interface AppProduct {
+        "price"?: number;
+        "tiles"?: string;
     }
     interface AppRoot {
     }
@@ -62,7 +75,8 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-home": AppHome;
-        "app-profile": AppProfile;
+        "app-list-product": AppListProduct;
+        "app-product": AppProduct;
         "app-root": AppRoot;
         "web-socket": WebSocket;
     }
@@ -72,7 +86,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
+            "app-list-product": LocalJSX.AppListProduct & JSXBase.HTMLAttributes<HTMLAppListProductElement>;
+            "app-product": LocalJSX.AppProduct & JSXBase.HTMLAttributes<HTMLAppProductElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "web-socket": LocalJSX.WebSocket & JSXBase.HTMLAttributes<HTMLWebSocketElement>;
         }

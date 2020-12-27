@@ -9,15 +9,28 @@ export class AppRoot {
   render() {
     return (
       <div>
-        <header>
-          <h1>Stencil App Starter</h1>
-        </header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="/">Home</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/websocket">WebSocket</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+          
         <main>
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true}/>
-              <stencil-route url="/profile/:name" component="app-profile"/>
               <stencil-route url="/websocket" component="web-socket"/>
             </stencil-route-switch>
           </stencil-router>
