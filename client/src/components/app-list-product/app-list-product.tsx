@@ -63,12 +63,14 @@ export class AppListProduct
   render()
   {
     return (
-      <div>
-        {this.products.map((todo) =>
-          <div>
-            <app-product tiles={todo.title} price={todo.price}/>
-          </div>
-        )}
+      <div class="container">
+        <div class="row">
+          {this.products.map((todo) =>
+            <div class="col-md-5">
+              <app-product tiles={todo.title} price={todo.price}/>
+            </div>
+          )}
+        </div>
       </div>
     )
   }

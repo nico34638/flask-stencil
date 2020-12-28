@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="030a8a41-660f-4b7a-850d-baaafe591651" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/projet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/projet.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/api/function.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Socket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/app-chat/app-chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-chat/app-chat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/app-chat/app-chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-chat/app-chat.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/chat-message-add/chat-message-add.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/chat-message-add/chat-message-add.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/web-socket/web-socket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/web-socket/web-socket.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/app-list-product/app-list-product.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-list-product/app-list-product.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/app-list-product/app-list-product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-list-product/app-list-product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/app-root/app-root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-root/app-root.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +74,7 @@
       <workItem from="1609168723402" duration="833000" />
       <workItem from="1609169620279" duration="65000" />
       <workItem from="1609169700772" duration="48000" />
-      <workItem from="1609179007295" duration="4628000" />
+      <workItem from="1609179007295" duration="5831000" />
     </task>
     <servers />
   </component>

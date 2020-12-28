@@ -23,9 +23,16 @@ export class AppRoot
               <li class="nav-item active">
                 <a class="nav-link" href="/">Home </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/websocket">WebSocket</a>
+              <li class="nav-item active">
+                <a class="nav-link" href="/product">Produits </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/websocket">Test WebSocket</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/chat">Chat</a>
+              </li>
+
             </ul>
           </div>
         </nav>
@@ -35,6 +42,7 @@ export class AppRoot
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true}/>
               <stencil-route url="/websocket" component="web-socket"/>
+              <stencil-route url="/products" component="app-list-product" exact={true}/>
               <stencil-route url="/product/add" component="app-product-add"/>
               <stencil-route url="/chat" component="app-chat"/>
             </stencil-route-switch>
