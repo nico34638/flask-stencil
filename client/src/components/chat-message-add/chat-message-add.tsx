@@ -1,5 +1,5 @@
 import { Component, Event, EventEmitter, h, State } from '@stencil/core';
-import { disconnectSocket, initiateSocket, sendMessage } from "../Socket"
+import { disconnectSocket, initiateSocket, sendMessage } from '../../service/socket'
 
 @Component({
   tag: 'chat-message-add',
@@ -16,7 +16,7 @@ export class ChatMessageAdd
 
   componentWillLoad()
   {
-    initiateSocket("trest")
+    initiateSocket("init")
   }
 
   handleSubmit(e)
@@ -27,7 +27,7 @@ export class ChatMessageAdd
       "username": "test",
       "message": this.message
     })
-    this.sendMessage.emit("true")
+    this.sendMessage.emit("true");
   }
 
   handleChange(event)
@@ -46,7 +46,7 @@ export class ChatMessageAdd
       <form onSubmit={(e) => this.handleSubmit(e)}>
         <div class="form-group">
           <label>Message : </label>
-          <input type="text" class="form-control" onInput={(event) => this.handleChange(event)}/>
+          <input type="text" class="form-control" onInput={(event) => this.handleChange(event)} minlength="4"/>
         </div>
         <button type="submit" class="btn btn-primary">Envoyer</button>
       </form>

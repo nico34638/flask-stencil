@@ -1,14 +1,14 @@
 import { Component, h, State } from '@stencil/core';
-import { disconnectSocket, initiateSocket, sendMessage, sendPing, sendPong } from "../Socket"
+import { disconnectSocket, initiateSocket, sendPong, sendPing, sendMessage } from '../../service/socket'
 
 @Component({
   tag: 'web-socket',
   styleUrl: 'web-socket.css',
   shadow: true,
 })
+
 export class WebSocket
 {
-
 
   @State() socket: {};
 
@@ -21,7 +21,7 @@ export class WebSocket
 
   componentWillLoad()
   {
-    initiateSocket('test bitch')
+    initiateSocket('init socket')
     console.log(this.socket)
   }
 

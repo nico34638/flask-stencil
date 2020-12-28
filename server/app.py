@@ -1,21 +1,14 @@
-from flask import Flask, Blueprint, jsonify, request
-from http import HTTPStatus
-
+from db import db
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+from flask_socketio import SocketIO, emit
 from flask_swagger import swagger
 from flask_swagger_ui import get_swaggerui_blueprint
-
-from flask_cors import CORS
-
-from flask_socketio import SocketIO, send, emit
-
+from http import HTTPStatus
 from ma import ma
-from db import db
-
-from model.product import Product
 from model.message import Message
+from model.product import Product
 
-
-import os
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -25,10 +18,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:toor@db/api'
 db.init_app(app)
 ma.init_app(app)
 
-
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app, cors_allowed_origins="*")
-
 
 SWAGGER_URL = '/api/docs'  # URL for exposing Swagger UI (without trailing '/')
 # Our API url (can of course be a local resource)
@@ -89,9 +80,9 @@ def add_product():
     app.logger.info('%s vient detre ajouter', product.json())
     product.save()
     return {
-        "created": "ok",
-        "product": product.json()
-    }, HTTPStatus.CREATED
+               "created": "ok",
+               "product": product.json()
+           }, HTTPStatus.CREATED
 
 
 @app.route('/products/<int:id>', methods=['DELETE'])
@@ -99,9 +90,9 @@ def delete_product(id):
     product = Product.find_by_id(id)
     Product.delete(product)
     return {
-        'delete': 'ok',
-        'product': product.json()
-    }, 200
+               'delete': 'ok',
+               'product': product.json()
+           }, 200
 
 
 @app.route("/spec")
@@ -121,7 +112,7 @@ def handle_message(data):
         'message'))
     message.save()
 
-    #app.logger.info("test %s", data.message)
+    # app.logger.info("test %s", data.message)
     emit('add_message', 'message recu')
 
 
@@ -143,13 +134,31 @@ def receive_pong(data):
     emit('pong', 'ping')
 
 
+@socketio.on('send_message')
+def send_message(data):
+    app.logger.info('received message: %s', data)
+    messages = Message.find_all()
+    app.logger.info('received message: %s', messages)
+    mess  = []
+    for message in messages:
+        mess.append(message.json())
+    app.logger.info(jsonify(mess))
+    emit('send_message', mess)
+
 @app.route('/messages')
 def get_all_messages():
     messages = Message.find_all()
     return jsonify([Message.json(message) for message in messages])
 
+@app.route('/messages/delete', methods=['POST'])
+def delete_all_message():
+    db.session.query(Message).delete()
+    db.session.commit()
+    return {
+               'delete': 'ok',
+               'messages': 'delete all messages'
+           }, 200
 
 if __name__ == '__main__':
-    print(db)
     socketio.run(app, host="localhost")
     app.run(port=5000, debug=True)

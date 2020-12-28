@@ -7,7 +7,6 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppChat {
-        "fetchMessage": () => Promise<void>;
     }
     interface AppHome {
         "fetchProducts": () => Promise<void>;
