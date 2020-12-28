@@ -24,7 +24,7 @@ export class AppRoot
                 <a class="nav-link" href="/">Home </a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="/product">Produits </a>
+                <a class="nav-link" href="/products">Produits </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/websocket">Test WebSocket</a>
