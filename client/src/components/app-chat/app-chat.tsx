@@ -1,28 +1,33 @@
-import {Component, h, State, Method, Listen} from '@stencil/core';
-import {Message} from '../../model/message';
+import { Component, h, Listen, Method, State } from '@stencil/core';
+import { Message } from '../../model/message';
 
 @Component({
   tag: 'app-chat',
   styleUrl: 'app-chat.css',
   shadow: true,
 })
-export class AppChat {
+export class AppChat
+{
 
   @State() messages: Array<Message> = [];
 
-  componentWillLoad() {
-    if (this.messages.length == 0) {
+  componentWillLoad()
+  {
+    if (this.messages.length == 0)
+    {
       this.fetchMessage()
     }
   }
 
   @Listen('sendMessage')
-  sendMessHander() {
+  sendMessHander()
+  {
     this.fetchMessage();
   }
 
   @Method()
-  async fetchMessage() {
+  async fetchMessage()
+  {
     const headers = new Headers();
 
     const param = {
@@ -32,13 +37,15 @@ export class AppChat {
 
     return await fetch('http://localhost:5000/messages', param)
       .then(response => response.json())
-      .then((result) => {
+      .then((result) =>
+      {
         this.messages = result
         console.log(this.messages)
       });
   }
 
-  render() {
+  render()
+  {
     {
       console.log("render")
     }

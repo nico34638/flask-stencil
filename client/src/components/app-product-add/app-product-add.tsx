@@ -1,18 +1,20 @@
-import {Component, h, State} from '@stencil/core';
+import { Component, h, State } from '@stencil/core';
 
 @Component({
   tag: 'app-product-add',
   styleUrl: 'app-product-add.css',
   shadow: true,
 })
-export class AppProductAdd {
+export class AppProductAdd
+{
 
   @State() titre: string;
   @State() description: string;
   @State() price: number;
 
 
-  saveProduct(product) {
+  saveProduct(product)
+  {
 
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -32,7 +34,8 @@ export class AppProductAdd {
   }
 
 
-  handleSubmit(e) {
+  handleSubmit(e)
+  {
     e.preventDefault()
 
     let product = {
@@ -46,19 +49,23 @@ export class AppProductAdd {
     this.saveProduct(product)
   }
 
-  handleChangeTitre(event) {
+  handleChangeTitre(event)
+  {
     this.titre = event.target.value;
   }
 
-  handleChangeDescription(event) {
+  handleChangeDescription(event)
+  {
     this.description = event.target.value;
   }
 
-  handleChangePrice(event) {
+  handleChangePrice(event)
+  {
     this.price = event.target.value;
   }
 
-  render() {
+  render()
+  {
     return (
       <div class="container">
         <div class="row">

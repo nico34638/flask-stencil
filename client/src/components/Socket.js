@@ -17,10 +17,10 @@ export const initiateSocket = (data) => {
 
 export const listen = () =>
 {
-  socket.on('add_message', msg => {
+  socket.on('add_message', () => {
     console.log("dskfk")
   })
-  
+
 }
 
 export const disconnectSocket = () => {
@@ -29,7 +29,7 @@ export const disconnectSocket = () => {
 }
 
 export const subscribeToChat = (cb) => {
-  if (!socket) return (true);
+  if (!socket) return true;
   socket.on('chat', msg => {
     console.log('Websocket event received!');
     return cb(null, msg);

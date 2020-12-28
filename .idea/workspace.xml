@@ -3,11 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="030a8a41-660f-4b7a-850d-baaafe591651" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/assets/bootstrap/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/assets/bootstrap/js/bootstrap.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Socket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/app-chat/app-chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-chat/app-chat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/app-home/app-home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-home/app-home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/app-list-product/app-list-product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-list-product/app-list-product.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/app-product-add/app-product-add.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-product-add/app-product-add.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/app-product/app-product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-product/app-product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/app-root/app-root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-root/app-root.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/chat-message-add/chat-message-add.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/chat-message-add/chat-message-add.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/chat-message/chat-message.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/chat-message/chat-message.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/web-socket/web-socket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/web-socket/web-socket.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +40,9 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="C:\Users\Nicolas Fidel\AppData\Local\JetBrains\Toolbox\apps\PhpStorm\ch-0\203.5981.175\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Users\Nicolas Fidel\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\203.5981.135\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -48,7 +55,9 @@
       <updated>1608920247909</updated>
       <workItem from="1608920249102" duration="89000" />
       <workItem from="1609018457711" duration="148000" />
-      <workItem from="1609168172115" duration="84000" />
+      <workItem from="1609168172115" duration="251000" />
+      <workItem from="1609168654212" duration="20000" />
+      <workItem from="1609168723402" duration="695000" />
     </task>
     <servers />
   </component>

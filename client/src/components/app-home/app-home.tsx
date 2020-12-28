@@ -5,17 +5,20 @@ import { Component, h, Method, State } from '@stencil/core';
   styleUrl: 'app-home.css',
   shadow: true,
 })
-export class AppHome {
+export class AppHome
+{
 
   @State() products: {};
 
 
-  constructor() {
+  constructor()
+  {
     this.handleCLick = this.handleCLick.bind(this)
 
   }
 
-  componentWillLoad() {
+  componentWillLoad()
+  {
     this.products = 'undefined'
     this.fetchProducts()
 
@@ -23,37 +26,39 @@ export class AppHome {
 
 
   @Method()
-  async fetchProducts() {
-    var myHeaders = new Headers();
+  async fetchProducts()
+  {
+    const myHeaders = new Headers();
 
-    var myInit = {
+    const myInit = {
       method: 'GET',
       headers: myHeaders
     };
 
     return await fetch('http://localhost:5000/products', myInit)
       .then(response => response.json())
-      .then((result) => {
+      .then((result) =>
+      {
         this.products = result
       });
   }
 
-  handleCLick() {
+  handleCLick()
+  {
     console.log(this.products)
   }
 
-  render() {
+  render()
+  {
 
 
     return (
       <div class="container">
         <div class="jumbotron">
-            <center>
-              <h1 class="display-3">Bienvenue</h1>
-              <p class="lead">This is a Stencil sample application - Demonstrating the power of pure web components!</p>
-              <button class="btn btn-primary">Learning Resources for Web Developers</button>
-            </center>
-          </div>
+            <h1 class="display-3">Bienvenue</h1>
+            <p class="lead">This is a Stencil sample application - Demonstrating the power of pure web components!</p>
+            <button class="btn btn-primary">Learning Resources for Web Developers</button>
+        </div>
 
         <div class="row">
           <div class="col-md-4">
@@ -65,12 +70,12 @@ export class AppHome {
               <button class="btn btn-primary">Test websocket</button>
             </stencil-route-link>
           </div>
-          
-          
+
+
           <app-list-product/>
         </div>
-    
-        
+
+
       </div>
     );
   }

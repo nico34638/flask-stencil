@@ -1,18 +1,20 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'chat-message',
   styleUrl: 'chat-message.css',
   shadow: true,
 })
-export class ChatMessage {
+export class ChatMessage
+{
 
   @Prop() message: string;
 
-  render() {
+  render()
+  {
     return (
       <div class="message">
-        <p>{ this.message }</p>
+        <p>{this.message}</p>
       </div>
     );
   }

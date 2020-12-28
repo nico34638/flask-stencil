@@ -1,47 +1,54 @@
-import {Component, h, State} from '@stencil/core';
-import {initiateSocket, sendMessage, sendPing, sendPong, disconnectSocket} from "../Socket"
-
+import { Component, h, State } from '@stencil/core';
+import { disconnectSocket, initiateSocket, sendMessage, sendPing, sendPong } from "../Socket"
 
 @Component({
   tag: 'web-socket',
   styleUrl: 'web-socket.css',
   shadow: true,
 })
-export class WebSocket {
+export class WebSocket
+{
 
 
   @State() socket: {};
 
-  constructor() {
+  constructor()
+  {
     this.envoyer = this.envoyer.bind(this)
     this.ping = this.ping.bind(this)
     this.pong = this.pong.bind(this)
   }
 
-  componentWillLoad() {
+  componentWillLoad()
+  {
     initiateSocket('test bitch')
     console.log(this.socket)
   }
 
-  disconnectedCallback() {
+  disconnectedCallback()
+  {
     disconnectSocket();
   }
 
-  ping() {
+  ping()
+  {
     sendPing()
   }
 
-  pong() {
+  pong()
+  {
     sendPong()
   }
 
 
-  envoyer() {
+  envoyer()
+  {
     console.log("envoyer")
     sendMessage("bite")
   }
 
-  render() {
+  render()
+  {
     return (
       <div class="container">
         <div class="row">
