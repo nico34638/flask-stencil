@@ -12,6 +12,7 @@ from ma import ma
 from db import db
 
 from model.product import Product
+from model.message import Message
 
 import os
 app = Flask(__name__)
@@ -132,6 +133,12 @@ def receive_ping(data):
 def receive_pong(data):
     app.logger.info('pong')
     emit('pong', 'ping')
+
+
+@app.route('/messages')
+def get_all_messages():
+    messages = Message.find_all()
+    return jsonify([Message.json(message) for message in messages])
 
 
 if __name__ == '__main__':

@@ -1,0 +1,8 @@
+@import '../../assets/bootstrap/css/bootstrap.min.css';
+
+.chat {
+  background-color: rgb(228, 228, 228) !important;
+}
+
+.messages {
+}

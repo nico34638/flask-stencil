@@ -1,0 +1,14 @@
+.message {
+  padding: 5px;
+  background-color: rgb(253, 246, 246);
+  border-radius: 10px;
+  margin: 10px;
+  width: 40%;
+  display: flex;
+}
+
+.message p {
+  padding-top: 5px;
+  padding-left: 10px;
+  text-align: center;
+}

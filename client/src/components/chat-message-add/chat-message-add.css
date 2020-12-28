@@ -1,0 +1,23 @@
+@import '../../assets/bootstrap/css/bootstrap.min.css';
+
+form {
+  display: flex;
+  background-color: rgb(158, 158, 158);
+  padding: 10px;
+  margin: 20px;
+}
+
+button,
+.form-group {
+  margin: 15px;
+}
+
+.form-group {
+  display: flex;
+}
+
+label,
+input {
+  margin: 5px;
+  width: 100%;
+}
