@@ -12,6 +12,15 @@ export const initiateSocket = (data) => {
       console.log(msg)
     })
   }
+
+}
+
+export const listen = () =>
+{
+  socket.on('add_message', msg => {
+    console.log("dskfk")
+  })
+  
 }
 
 export const disconnectSocket = () => {
@@ -30,8 +39,8 @@ export const subscribeToChat = (cb) => {
 export const sendMessage = (message) => {
   console.log("==============")
   if (socket) {
-    socket.emit('message', {message});
-    socket.on('message', msg => {
+    socket.emit('add_message', {message});
+    socket.on('add_message', msg => {
       console.log(msg)
     })
   }

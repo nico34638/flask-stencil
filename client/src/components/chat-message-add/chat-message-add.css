@@ -4,7 +4,8 @@ form {
   display: flex;
   background-color: rgb(158, 158, 158);
   padding: 10px;
-  margin: 20px;
+  margin: 10px;
+  border-radius: 10px;
 }
 
 button,

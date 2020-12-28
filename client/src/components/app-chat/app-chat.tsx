@@ -1,5 +1,7 @@
-import { Component, h, State, Method } from '@stencil/core';
+import { Component, h, State, Method, Listen } from '@stencil/core';
 import { Message } from '../../model/message';
+import { initiateSocket, disconnectSocket} from "../Socket"
+
 
 @Component({
   tag: 'app-chat',
@@ -21,6 +23,24 @@ export class AppChat {
     {
         this.fetchMessage()
     }
+
+    initiateSocket()
+  }
+
+  componentsWillRender()
+  {
+    this.fetchMessage()
+  }
+
+  disconnectedCallback() {
+    disconnectSocket();
+  }
+
+  @Listen('sendMess')
+  sendMessHander(event: CustomEvent<string>)
+  {
+    console.log(event)
+    this.fetchMessage();
   }
 
   @Method()
@@ -41,6 +61,7 @@ export class AppChat {
   }
 
   render() {
+    {console.log("render")}
     return (
       <div class="container">
         <div class="row">
@@ -53,7 +74,7 @@ export class AppChat {
             )}
             <chat-message message="Exemple de message" />
             <chat-message message="Exemple de message" />
-            
+
             <chat-message-add/>
           </div>
         </div>

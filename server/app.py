@@ -14,6 +14,7 @@ from db import db
 from model.product import Product
 from model.message import Message
 
+
 import os
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
@@ -111,10 +112,17 @@ def spec():
     return jsonify(swag)
 
 
-@socketio.on('message')
+@socketio.on('add_message')
 def handle_message(data):
     app.logger.info('received message: %s', data)
-    emit('message', 'message recu')
+    app.logger.info('message %s', data.get('message'))
+    data = data.get('message')
+    message = Message(data.get('username'), data.get(
+        'message'))
+    message.save()
+
+    #app.logger.info("test %s", data.message)
+    emit('add_message', 'message recu')
 
 
 @socketio.on('init')
