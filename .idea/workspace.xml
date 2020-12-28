@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="030a8a41-660f-4b7a-850d-baaafe591651" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Socket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/app-home/app-home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-home/app-home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/app-root/app-root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-root/app-root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/web-socket/web-socket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/web-socket/web-socket.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/app-chat/app-chat.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-chat/app-chat.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/app-list-product/app-list-product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-list-product/app-list-product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/app-product-add/app-product-add.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/app-product-add/app-product-add.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/chat-message-add/chat-message-add.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/chat-message-add/chat-message-add.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +48,7 @@
       <updated>1608920247909</updated>
       <workItem from="1608920249102" duration="89000" />
       <workItem from="1609018457711" duration="148000" />
+      <workItem from="1609168172115" duration="84000" />
     </task>
     <servers />
   </component>

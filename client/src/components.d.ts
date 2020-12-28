@@ -117,7 +117,7 @@ declare namespace LocalJSX {
         "message"?: string;
     }
     interface ChatMessageAdd {
-        "onSendMess"?: (event: CustomEvent<string>) => void;
+        "onSendMessage"?: (event: CustomEvent<string>) => void;
     }
     interface WebSocket {
     }

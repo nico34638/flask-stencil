@@ -1,28 +1,25 @@
-import { Component, State, h, Method } from '@stencil/core';
-import { Product } from '../../model/product'
+import {Component, State, h, Method} from '@stencil/core';
+import {Product} from '../../model/product'
 
 @Component({
   tag: 'app-list-product',
   styleUrl: 'app-list-product.css',
   shadow: true,
 })
-  
+
 export class AppListProduct {
 
 
   @State() products: Array<Product> = [];
 
-  constructor()
-  {
+  constructor() {
     this.returnComponent = this.returnComponent.bind(this);
     this.products = [];
   }
 
-  componentWillLoad()
-  {
-    if (this.products.length == 0)
-    {
-        this.fetchProducts()
+  componentWillLoad() {
+    if (this.products.length == 0) {
+      this.fetchProducts()
     }
   }
 
@@ -42,23 +39,16 @@ export class AppListProduct {
       });
   }
 
-  returnComponent()
-  {
-    if (this.products.length != 0)
-    {
+  returnComponent() {
+    if (this.products.length != 0) {
       console.log(this.products)
       this.products.forEach(product => {
         console.log(product)
         return (
-           <app-product title={ product.title } price={ product.price } />
+          <app-product title={product.title} price={product.price}/>
         );
       });
     }
-  }
-
-  componentDidRender()
-  {
-    //this.returnComponent()
   }
 
   render() {
@@ -66,11 +56,11 @@ export class AppListProduct {
       <div>
         {this.products.map((todo) =>
           <div>
-            <app-product tiles={ todo.title } price={ todo.price } />
+            <app-product tiles={todo.title} price={todo.price}/>
           </div>
         )}
       </div>
     )
-}
+  }
 
 }

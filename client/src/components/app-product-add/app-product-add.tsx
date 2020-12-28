@@ -1,4 +1,4 @@
-import { Component, h, State } from '@stencil/core';
+import {Component, h, State} from '@stencil/core';
 
 @Component({
   tag: 'app-product-add',
@@ -12,8 +12,7 @@ export class AppProductAdd {
   @State() price: number;
 
 
-  saveProduct(product)
-  {
+  saveProduct(product) {
 
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -26,16 +25,15 @@ export class AppProductAdd {
 
     console.log(JSON.stringify(product))
 
-  fetch("http://localhost:5000/products", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+    fetch("http://localhost:5000/products", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
   }
-  
+
 
   handleSubmit(e) {
     e.preventDefault()
-    // send data to our backend
 
     let product = {
       'title': this.titre,
@@ -46,13 +44,10 @@ export class AppProductAdd {
     console.log(product)
 
     this.saveProduct(product)
-
-
   }
 
   handleChangeTitre(event) {
     this.titre = event.target.value;
-    
   }
 
   handleChangeDescription(event) {
@@ -62,7 +57,7 @@ export class AppProductAdd {
   handleChangePrice(event) {
     this.price = event.target.value;
   }
- 
+
   render() {
     return (
       <div class="container">
@@ -70,29 +65,32 @@ export class AppProductAdd {
           <form onSubmit={(e) => this.handleSubmit(e)}>
             <div class="form-group">
               <label>
-              Titre:
-              <input type="text" value={this.titre} onInput={(event) => this.handleChangeTitre(event)} class="form-control"/>
+                Titre:
+                <input type="text" value={this.titre} onInput={(event) => this.handleChangeTitre(event)}
+                       class="form-control"/>
               </label>
             </div>
 
             <div class="form-group">
               <label>
-              Description:
-              <input type="text" value={this.description} onInput={(event) => this.handleChangeDescription(event)} class="form-control"/>
+                Description:
+                <input type="text" value={this.description} onInput={(event) => this.handleChangeDescription(event)}
+                       class="form-control"/>
               </label>
             </div>
 
             <div class="form-group">
               <label>
-              Prix:
-              <input type="number" value={this.price} onInput={(event) => this.handleChangePrice(event)} class="form-control"/>
+                Prix:
+                <input type="number" value={this.price} onInput={(event) => this.handleChangePrice(event)}
+                       class="form-control"/>
               </label>
             </div>
 
-            <input type="submit" value="Submit"  class="btn btn-primary"/>
+            <input type="submit" value="Submit" class="btn btn-primary"/>
           </form>
         </div>
-       </div>
+      </div>
     );
   }
 

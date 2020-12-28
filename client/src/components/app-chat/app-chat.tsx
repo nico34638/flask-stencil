@@ -1,7 +1,5 @@
-import { Component, h, State, Method, Listen } from '@stencil/core';
-import { Message } from '../../model/message';
-import { initiateSocket, disconnectSocket} from "../Socket"
-
+import {Component, h, State, Method, Listen} from '@stencil/core';
+import {Message} from '../../model/message';
 
 @Component({
   tag: 'app-chat',
@@ -12,34 +10,14 @@ export class AppChat {
 
   @State() messages: Array<Message> = [];
 
-  constructor()
-  {
-
-  }
-
   componentWillLoad() {
-
-    if (this.messages.length == 0)
-    {
-        this.fetchMessage()
+    if (this.messages.length == 0) {
+      this.fetchMessage()
     }
-
-    initiateSocket()
   }
 
-  componentsWillRender()
-  {
-    this.fetchMessage()
-  }
-
-  disconnectedCallback() {
-    disconnectSocket();
-  }
-
-  @Listen('sendMess')
-  sendMessHander(event: CustomEvent<string>)
-  {
-    console.log(event)
+  @Listen('sendMessage')
+  sendMessHander() {
     this.fetchMessage();
   }
 
@@ -61,7 +39,9 @@ export class AppChat {
   }
 
   render() {
-    {console.log("render")}
+    {
+      console.log("render")
+    }
     return (
       <div class="container">
         <div class="row">
@@ -69,11 +49,9 @@ export class AppChat {
 
             {this.messages.map((todo) =>
               <div>
-                 <chat-message message={todo.message} />
+                <chat-message message={todo.message}/>
               </div>
             )}
-            <chat-message message="Exemple de message" />
-            <chat-message message="Exemple de message" />
 
             <chat-message-add/>
           </div>

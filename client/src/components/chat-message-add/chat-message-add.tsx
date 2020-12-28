@@ -11,12 +11,7 @@ export class ChatMessageAdd {
   @State() message: string;
 
 
-  @Event({
-    eventName: 'sendMess',
-    composed: true,
-    cancelable: true,
-    bubbles: true,
-  }) sendMess: EventEmitter<string>;
+  @Event() sendMessage: EventEmitter<string>;
   
   componentWillLoad() {
     initiateSocket("trest")
@@ -29,8 +24,7 @@ export class ChatMessageAdd {
       "username": "test",
       "message": this.message
     })
-    this.sendMess.emit("true")
-    // send data to our backend
+    this.sendMessage.emit("true")
   }
 
   handleChange(event) {
